@@ -34,6 +34,8 @@ module.exports = {
       animation: {
         bump: 'bump 300ms ease-out',
         fadeIn: 'fadeIn 1s ease-out forwards',
+        bounce200: 'bounce 1s infinite 200ms',
+        bounce400: 'bounce 1s infinite 400ms',
       },
     },
   },

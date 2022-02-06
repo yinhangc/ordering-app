@@ -24,7 +24,7 @@ const HeaderButton = () => {
       onClick={() => setShowCart(true)}
     >
       <FontAwesomeIcon icon={faShoppingCart} />
-      <span>購物籃</span>
+      <span>購物車</span>
       <span className="rounded-full w-6 h-6 bg-gray-500">{totalItem}</span>
     </button>
   );

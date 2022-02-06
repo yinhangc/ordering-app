@@ -14,7 +14,7 @@ const Header = () => {
         </h1>
         <HeaderButton />
       </header>
-      <div className="relative h-[26rem] w-screen mb-32">
+      <div className="relative h-[26rem] w-screen mb-36">
         <img
           src={cafeImg}
           alt="Cafe"
