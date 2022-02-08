@@ -48,14 +48,11 @@ const Checkout = (props) => {
     (value) => value.trim() !== '' && value.match(/^[2-9][0-9]{7}$/)
   );
 
-  let formIsValid =
-    nameIsValid && addressIsValid && phoneIsValid ? true : false;
-
   const submitHandler = async (e) => {
     setSubmitting(true);
     try {
       e.preventDefault();
-      if (!formIsValid) return;
+      if (!nameIsValid || !addressIsValid || !phoneIsValid) return;
       await fetch(
         'https://react-http-b067f-default-rtdb.firebaseio.com/orders.json/',
         {
@@ -147,9 +144,11 @@ const Checkout = (props) => {
               </button>
               <button
                 type="submit"
-                className={`flex items-center justify-center font-bold border-2 py-2 px-6 rounded-lg hover:bg-emerald-800 hover:text-white ${
-                  !formIsValid &&
-                  'disabled bg-gray-500 text-white hover:bg-gray-500 cursor-default'
+                disabled={!nameIsValid || !addressIsValid || !phoneIsValid}
+                className={`flex items-center justify-center font-bold border-2 py-2 px-6 rounded-lg ${
+                  !nameIsValid || !addressIsValid || !phoneIsValid
+                    ? ' bg-gray-500 text-white hover:bg-gray-500 cursor-default'
+                    : 'hover:bg-emerald-800 hover:text-white'
                 }`}
               >
                 <FontAwesomeIcon icon={faCheckCircle} className="mr-2" />

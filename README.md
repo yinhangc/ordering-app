@@ -1,6 +1,10 @@
 # Ordering App
 
-Practicing React frontend.
+Practicing React frontend:
+
+- Custom hook
+- Form validation
+- useContext()
 
 Ordering data will be sent to Firebase realtime database.
 
